@@ -134,11 +134,23 @@ public class FileToolUtil {
         return null;
     }
 
+    public static int getCCBDataNum(){
+        init();
+        int num = 0;
+        try {
+             num = randomAccessFile.readInt();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return num;
+    }
+
     public static void main(String[] args) {
         /*for(int i = 0 ; i < 1000 ; i++){
             writeFile("coneteneddjafjkadfjlsfjlsafjkdsafkdsajfdsakjfskjsf");
         }*/
-        readFile();
+        getCCBDataNum();
+//        readFile();
       /*  String s = "coneteneddjafjkadfjlsfjlsafjkdsafkdsajfdsakjfskjsf";
         System.out.println(s.length());*/
     }

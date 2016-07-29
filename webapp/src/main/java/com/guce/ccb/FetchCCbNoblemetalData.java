@@ -12,9 +12,14 @@ public class FetchCCbNoblemetalData implements Runnable {
 
     public void run() {
 
-        String ccbData = HttpClientComponent.httpPostCCB("http://wap.ccb.com/mbs_web/invest_metal_marketTrendList.do",0,0,0);
-        System.out.println(ccbData);
-        FileToolUtil.writeFile(ccbData);
+        try{
+            String ccbData = HttpClientComponent.httpPostCCB("http://wap.ccb.com/mbs_web/invest_metal_marketTrendList.do",0,0,0);
+            System.out.println(ccbData);
+            FileToolUtil.writeFile(ccbData);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) {

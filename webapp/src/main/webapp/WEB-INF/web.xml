@@ -27,9 +27,17 @@
     <url-pattern>/tbox/*</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>uploadProcessorServlet</servlet-name>
+    <servlet-class>com.guce.upload.UploadProcessorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uploadProcessorServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    
   </listener>
 
   <filter>
@@ -53,5 +61,8 @@
       30
     </session-timeout>
   </session-config>
-
+  <!-- Welcome file lists -->
+  <welcome-file-list>
+    <welcome-file>ajaxFileUpload.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
