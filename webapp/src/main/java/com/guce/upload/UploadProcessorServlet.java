@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+
 /**
  * Created by Administrator on 2016/7/30.
  */
@@ -38,9 +39,7 @@ public class UploadProcessorServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                  HttpServletResponse response) throws ServletException, IOException{
-        request.setCharacterEncoding("utf-8"); // 设置编码
-        response.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
+
         // 获得磁盘文件条目工厂
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
@@ -75,6 +74,10 @@ public class UploadProcessorServlet extends HttpServlet {
             }
             // 真正写到磁盘上
             item.write(file); // 第三方提供的
+
+            request.setCharacterEncoding("utf-8"); // 设置编码
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("text/html;charset=UTF-8");
 
             PrintWriter writer = response.getWriter();
 

@@ -13,6 +13,7 @@ import org.springframework.web.context.support.WebApplicationObjectSupport;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -29,6 +30,10 @@ public class BootStrap implements InitializingBean,DisposableBean,FactoryBean {
 
     public void destroy() throws Exception {
 
+        ScheduledExecutorService service =  ThreadPoolService.getSchedulePool();
+        if(service != null){
+            service.shutdownNow();
+        }
     }
 
     public Object getObject() throws Exception {

@@ -1,5 +1,8 @@
 package com.guce;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 /**
  * Created by Administrator on 2016/5/4.
  */
@@ -80,7 +83,13 @@ public class Philosopher extends Thread {
         ph2.start();
         ph3.start();
         ph4.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ph5.start();
+
 
     }
 }
