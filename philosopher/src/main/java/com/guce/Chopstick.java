@@ -31,7 +31,7 @@ public class Chopstick {
 
                 try {
                     condition.await();
-                    enable = false;
+                    enable = true   ;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -50,11 +50,7 @@ public class Chopstick {
 
         lock.lock();
         try {
-            if (!enable) {
-                enable = true;
-            } else {
-                enable = false;
-            }
+             enable = false;
             condition.signal();
         }finally {
             lock.unlock();
