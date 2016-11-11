@@ -1,8 +1,5 @@
 package com.guce;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-
 /**
  * Created by Administrator on 2016/5/4.
  */
@@ -48,7 +45,7 @@ public class Philosopher extends Thread {
     public void putdownRightChopstick(){
         System.out.println(name + " ;准备拿起放下的筷子 ：" + rightchopstick.getName() );
         rightchopstick.putdownChopstick();
-        System.out.println(name + " ;放下左边的筷子 ：" + rightchopstick.getName() );
+        System.out.println(name + " ;放下右边的筷子 ：" + rightchopstick.getName() );
     }
 
 
@@ -83,13 +80,12 @@ public class Philosopher extends Thread {
         ph2.start();
         ph3.start();
         ph4.start();
+        ph5.start();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        ph5.start();
-
-
+        //ph5.start();
     }
 }
