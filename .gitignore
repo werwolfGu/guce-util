@@ -13,3 +13,4 @@ tags
 *.aof
 *.rdb
 pom.xml
+logs/

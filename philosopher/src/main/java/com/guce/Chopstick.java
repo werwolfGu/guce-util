@@ -19,11 +19,27 @@ public class Chopstick {
         return name;
     }
 
+    public Chopstick(){
+
+    }
     public Chopstick(String name){
         this.name = name;
     }
 
+    class test{
+        public void print(){
+
+        }
+    }
+
     public void pickupChopstick(){
+        String str = "123";
+        check:{
+            if(true){
+                System.out.println(str);
+                break check;
+            }
+        }
 
         lock.lock();
         try{

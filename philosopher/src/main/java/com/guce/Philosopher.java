@@ -1,11 +1,15 @@
 package com.guce;
 
+import java.util.Hashtable;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * Created by Administrator on 2016/5/4.
  */
 public class Philosopher extends Thread {
     private Chopstick leftchopstick;
     private Chopstick rightchopstick;
+    private Chopstick.test t = new Chopstick().new test();
     private String name;
 
     public Philosopher(String name,Chopstick leftchopstick, Chopstick rightchopstick){
@@ -64,12 +68,15 @@ public class Philosopher extends Thread {
     }
 
     public static void main(String[] args) {
+
         Chopstick ch1 = new Chopstick("ch1");
         Chopstick ch2 = new Chopstick("ch2");
         Chopstick ch3 = new Chopstick("ch3");
         Chopstick ch4 = new Chopstick("ch4");
         Chopstick ch5 = new Chopstick("ch5");
 
+        Chopstick.test t = ch1.new test();
+        t.print();
         Philosopher ph1 = new Philosopher("A",ch1,ch2);
         Philosopher ph2 = new Philosopher("B",ch2,ch3);
         Philosopher ph3 = new Philosopher("C",ch3,ch4);
